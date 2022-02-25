@@ -1,0 +1,28 @@
+#Run and build gerald77/php7-docker
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  imageName: 'gerald77/php7-docker'
+  dockerHub: 'gerald77'
+
+steps:
+- task: Docker@2
+  displayName: Build php7-docker
+  inputs:
+    repository: $(imageName)
+    command: build
+    Dockerfile: Dockerfile
+    tags: latest
+- task: Docker@2
+  displayName: Push php7-docker
+  inputs:
+    containerRegistry: |
+      $(dockerHub)
+    repository: $(imageName)
+    command: push
+    tags: latest
