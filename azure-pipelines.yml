@@ -1,7 +1,7 @@
 #Run and build gerald77/php7-docker
 
 trigger:
-- master
+- main
 
 pool:
   vmImage: ubuntu-latest
