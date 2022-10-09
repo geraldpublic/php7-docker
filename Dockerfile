@@ -1,6 +1,6 @@
 FROM php:7-fpm-alpine
 
-LABEL version="2022-09-21"
+LABEL version="2022-10-09"
 LABEL description="PHP + Extensions - mysqli/imagick"
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql exif && \
