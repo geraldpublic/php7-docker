@@ -1,7 +1,7 @@
 FROM php:7-fpm-alpine
 
 LABEL version="2026-10-11"
-LABEL description="PHP + Extensions - mysqli/imagick"
+LABEL description="PHP + Extensions - mysqli/pdo_mysql/exif/gd"
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql exif && \
   apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev && \
